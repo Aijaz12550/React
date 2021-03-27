@@ -14,6 +14,7 @@ export class actions {
 
   static fetchData = () => {
     return dispatch => {
+      dispatch({type:"LOADING"})
       return middleware.fetchData(1).then(data=>{
         dispatch({type:"ADD",payload:data})
       }).catch(error => {
