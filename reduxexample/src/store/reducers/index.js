@@ -1,13 +1,14 @@
 import { constants } from "../constants"
 // first param contain the previous state
 
-let initialState = 0
+let initialState = []
+
 
 export const reducer = (state=initialState, action) =>{
     console.log("state",state)
     switch(action.type){
         case constants.ADD:
-            return state+1
+            return [...state,action.payload]
         case "subtract":
             return state-1
         default:
